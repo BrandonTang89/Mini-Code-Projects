@@ -1,0 +1,9 @@
+8 3
+bethany_chong_yu_lin 2 boey_sze_min_jeanelle 3 cheong_chi_yun_estene 1
+boey_sze_min_jeanelle 1 bethany_chong_yu_lin 1
+cheah_hoe_teng 3 chua_ren_kai 1 goh_yu_xiang_ranier 1 huang_kai_yao 1
+cheong_chi_yun_estene 2 elena_goh_ching_ping 1 goh_yu_xiang_ranier 1
+chua_ren_kai 3 cheah_hoe_teng 2 goh_yu_xiang_ranier 2 huang_kai_yao 2
+elena_goh_ching_ping 0
+goh_yu_xiang_ranier 3 chua_ren_kai 1 huang_kai_yao 1 cheong_chi_yun_estene 1
+huang_kai_yao 3 goh_yu_xiang_ranier 1 chua_ren_kai 1 cheah_hoe_teng 1
