@@ -108,17 +108,14 @@ void stop_timer(void)
 }
 
 /** Timer 1*/
-# define BAUD 10 // 10 bits per second
-# define SAMPLES_PER_BIT 10 // 100 samples per bit
 static volatile unsigned numOut = 0; // number of outputs we have done so far
-static volatile unsigned timeStepsPerOutput = (1000) / (BAUD * TICK * SAMPLES_PER_BIT); // 10 ms between samples // 100ms between outputs
+static volatile unsigned timeStepsPerOutput = 2; // 10 ms between samples
 static volatile unsigned timeCounter = 0;
 #define MAXOUT 1500
 void timer1_handler(void) {
     if (TIMER1_COMPARE[0]) {
         if (!ADC_BUSY && numOut < MAXOUT + 1){ // If ADC is not busy, start a new conversion
             if (timeCounter >= timeStepsPerOutput){
-                GPIO_OUT = 0x0ff0; // set rows low and cols high
                 ADC_START = 1;
                 timeCounter = 0;
                 numOut++;
@@ -147,9 +144,6 @@ void init_timer(void) {
 #define AIN6 64
 #define AIN7 128
 void init_adc(void) {
-    GPIO_DIR = 0xfff0;
-
-
     SET_FIELD(ADC_CONFIG, ADC_CONFIG_RES, ADC_RES_8Bit);
     SET_FIELD(ADC_CONFIG, ADC_CONFIG_INPSEL, ADC_INPSEL_AIn_1_1);
     SET_FIELD(ADC_CONFIG, ADC_CONFIG_REFSEL, ADC_REFSEL_BGap);
@@ -187,18 +181,15 @@ void init(void)
     }
     printf("Done Recording\n");
 
+    static unsigned threshold;
     
-    static unsigned threshold = 0;
-    
-    for (int i = 10; i < 20; i++){
+    for (int i = 0; i < 10; i++){
         threshold += samples[i];
     }
     threshold /= 10;
-    threshold += 5;
-    printf("Threshold: %d\n", threshold);
+    threshold -= 2;
     for (int i = 1; i < MAXOUT; i++){
-        // printf("%d\n", samples[i]);
-        if (samples[i] < threshold){
+        if (samples[i] > threshold){
             printf("1");
             bitstream[i] = 1;
         } else {
@@ -210,7 +201,8 @@ void init(void)
 
     // detect falling edge and determine if it is a start bit (next 3 or so bits are 0)
     
-    int timePerData = 1000 / BAUD; // 100 ms per data bit
+    int baud = 10; // 10 bits per second
+    int timePerData = 1000 / baud; // 100 ms per data bit
     int dt = TICK * timeStepsPerOutput; // time between samples
     for (int i = 1; i < MAXOUT; i++){
         if (bitstream[i] == 0 && bitstream[i-1] == 1){ // falling edge
@@ -247,7 +239,6 @@ void init(void)
             }
         }
     }
-    
     
     
     stop_timer();
