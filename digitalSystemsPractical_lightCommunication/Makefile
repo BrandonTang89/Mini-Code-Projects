@@ -1,7 +1,7 @@
 # lab3-primes/Makefile
 # Copyright (c) 2018 J. M. Spivey
 
-all: whiteLightReceiver.hex
+all: whiteLightReceiver.hex redLightTransmitter.hex
 
 include ../config.mk
 CC = arm-none-eabi-gcc

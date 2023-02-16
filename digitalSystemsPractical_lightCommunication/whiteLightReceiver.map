@@ -7,12 +7,6 @@ Archive member included to satisfy reference by file (symbol)
 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
                               /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o) (__aeabi_idiv0)
 
-Allocating common symbols
-Common symbol       size              file
-
-bitstream           0x1770            whiteLightReceiver.o
-samples             0x1770            whiteLightReceiver.o
-
 Memory Configuration
 
 Name             Origin             Length             Attributes
@@ -27,12 +21,12 @@ LOAD lib.o
 LOAD startup.o
 LOAD /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a
 
-.text           0x0000000000000000      0xda4
+.text           0x0000000000000000      0xddc
  *(.vectors)
  .vectors       0x0000000000000000       0xc0 startup.o
                 0x0000000000000000                __vectors
  *(.text*)
- .text          0x00000000000000c0      0x53c whiteLightReceiver.o
+ .text          0x00000000000000c0      0x588 whiteLightReceiver.o
                 0x00000000000000c0                buf_put
                 0x00000000000000e0                buf_get
                 0x0000000000000104                serial_init
@@ -42,100 +36,100 @@ LOAD /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a
                 0x0000000000000208                start_timer
                 0x0000000000000234                stop_timer
                 0x0000000000000264                timer1_handler
-                0x00000000000002d0                init_timer
-                0x0000000000000338                init_adc
-                0x00000000000003a8                adc_handler
-                0x00000000000003ec                init
- .text          0x00000000000005fc      0x274 lib.o
-                0x000000000000074e                f_storec
-                0x000000000000077a                atoi
-                0x00000000000007bc                xtou
-                0x00000000000007f6                do_print
-                0x000000000000080c                sprintf
-                0x0000000000000840                printf
- .text          0x0000000000000870      0x17c startup.o
-                0x0000000000000870                default_start
-                0x0000000000000870                __start
-                0x000000000000087a                memcpy
-                0x000000000000088e                memmove
-                0x00000000000008b6                memset
-                0x00000000000008c8                __reset
-                0x000000000000091c                memcmp
-                0x0000000000000942                irq_priority
-                0x00000000000009a0                delay_loop
-                0x00000000000009b2                default_handler
-                0x00000000000009b2                spin
- .text          0x00000000000009ec      0x114 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
-                0x00000000000009ec                __udivsi3
-                0x00000000000009ec                __aeabi_uidiv
-                0x0000000000000af8                __aeabi_uidivmod
- .text          0x0000000000000b00      0x1d4 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
-                0x0000000000000b00                __aeabi_idiv
-                0x0000000000000b00                __divsi3
-                0x0000000000000ccc                __aeabi_idivmod
- .text          0x0000000000000cd4        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
-                0x0000000000000cd4                __aeabi_ldiv0
-                0x0000000000000cd4                __aeabi_idiv0
+                0x00000000000002e8                init_timer
+                0x0000000000000350                init_adc
+                0x00000000000003c0                adc_handler
+                0x0000000000000418                init
+ .text          0x0000000000000648      0x274 lib.o
+                0x000000000000079a                f_storec
+                0x00000000000007c6                atoi
+                0x0000000000000808                xtou
+                0x0000000000000842                do_print
+                0x0000000000000858                sprintf
+                0x000000000000088c                printf
+ .text          0x00000000000008bc      0x17c startup.o
+                0x00000000000008bc                default_start
+                0x00000000000008bc                __start
+                0x00000000000008c6                memcpy
+                0x00000000000008da                memmove
+                0x0000000000000902                memset
+                0x0000000000000914                __reset
+                0x0000000000000968                memcmp
+                0x000000000000098e                irq_priority
+                0x00000000000009ec                delay_loop
+                0x00000000000009fe                default_handler
+                0x00000000000009fe                spin
+ .text          0x0000000000000a38      0x114 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+                0x0000000000000a38                __udivsi3
+                0x0000000000000a38                __aeabi_uidiv
+                0x0000000000000b44                __aeabi_uidivmod
+ .text          0x0000000000000b4c      0x1d4 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
+                0x0000000000000b4c                __aeabi_idiv
+                0x0000000000000b4c                __divsi3
+                0x0000000000000d18                __aeabi_idivmod
+ .text          0x0000000000000d20        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+                0x0000000000000d20                __aeabi_ldiv0
+                0x0000000000000d20                __aeabi_idiv0
  *(.rodata*)
  .rodata.str1.4
-                0x0000000000000cd8       0x5f whiteLightReceiver.o
- *fill*         0x0000000000000d37        0x1 
+                0x0000000000000d24       0x4b whiteLightReceiver.o
+ *fill*         0x0000000000000d6f        0x1 
  .rodata.str1.4
-                0x0000000000000d38       0x11 lib.o
- *fill*         0x0000000000000d49        0x3 
- .rodata        0x0000000000000d4c       0x58 lib.o
-                0x0000000000000da4                . = ALIGN (0x4)
-                0x0000000000000da4                __etext = .
-                0x00000000000009b2                PROVIDE (nmi_handler = default_handler)
-                0x00000000000009b2                PROVIDE (hardfault_handler = default_handler)
-                0x00000000000009b2                PROVIDE (svc_handler = default_handler)
-                0x00000000000009b2                PROVIDE (pendsv_handler = default_handler)
-                0x00000000000009b2                PROVIDE (systick_handler = default_handler)
+                0x0000000000000d70       0x11 lib.o
+ *fill*         0x0000000000000d81        0x3 
+ .rodata        0x0000000000000d84       0x58 lib.o
+                0x0000000000000ddc                . = ALIGN (0x4)
+                0x0000000000000ddc                __etext = .
+                0x00000000000009fe                PROVIDE (nmi_handler = default_handler)
+                0x00000000000009fe                PROVIDE (hardfault_handler = default_handler)
+                0x00000000000009fe                PROVIDE (svc_handler = default_handler)
+                0x00000000000009fe                PROVIDE (pendsv_handler = default_handler)
+                0x00000000000009fe                PROVIDE (systick_handler = default_handler)
                 [!provide]                        PROVIDE (uart_handler = default_handler)
-                0x00000000000009b2                PROVIDE (timer0_handler = default_handler)
+                0x00000000000009fe                PROVIDE (timer0_handler = default_handler)
                 [!provide]                        PROVIDE (timer1_handler = default_handler)
-                0x00000000000009b2                PROVIDE (timer2_handler = default_handler)
-                0x00000000000009b2                PROVIDE (power_clock_handler = default_handler)
-                0x00000000000009b2                PROVIDE (radio_handler = default_handler)
-                0x00000000000009b2                PROVIDE (i2c_handler = default_handler)
-                0x00000000000009b2                PROVIDE (spi_handler = default_handler)
-                0x00000000000009b2                PROVIDE (gpiote_handler = default_handler)
+                0x00000000000009fe                PROVIDE (timer2_handler = default_handler)
+                0x00000000000009fe                PROVIDE (power_clock_handler = default_handler)
+                0x00000000000009fe                PROVIDE (radio_handler = default_handler)
+                0x00000000000009fe                PROVIDE (i2c_handler = default_handler)
+                0x00000000000009fe                PROVIDE (spi_handler = default_handler)
+                0x00000000000009fe                PROVIDE (gpiote_handler = default_handler)
                 [!provide]                        PROVIDE (adc_handler = default_handler)
-                0x00000000000009b2                PROVIDE (rtc0_handler = default_handler)
-                0x00000000000009b2                PROVIDE (temp_handler = default_handler)
-                0x00000000000009b2                PROVIDE (rng_handler = default_handler)
-                0x00000000000009b2                PROVIDE (ecb_handler = default_handler)
-                0x00000000000009b2                PROVIDE (ccm_aar_handler = default_handler)
-                0x00000000000009b2                PROVIDE (wdt_handler = default_handler)
-                0x00000000000009b2                PROVIDE (rtc1_handler = default_handler)
-                0x00000000000009b2                PROVIDE (qdec_handler = default_handler)
-                0x00000000000009b2                PROVIDE (lpcomp_handler = default_handler)
-                0x00000000000009b2                PROVIDE (swi0_handler = default_handler)
-                0x00000000000009b2                PROVIDE (swi1_handler = default_handler)
-                0x00000000000009b2                PROVIDE (swi2_handler = default_handler)
-                0x00000000000009b2                PROVIDE (swi3_handler = default_handler)
-                0x00000000000009b2                PROVIDE (swi4_handler = default_handler)
-                0x00000000000009b2                PROVIDE (swi5_handler = default_handler)
+                0x00000000000009fe                PROVIDE (rtc0_handler = default_handler)
+                0x00000000000009fe                PROVIDE (temp_handler = default_handler)
+                0x00000000000009fe                PROVIDE (rng_handler = default_handler)
+                0x00000000000009fe                PROVIDE (ecb_handler = default_handler)
+                0x00000000000009fe                PROVIDE (ccm_aar_handler = default_handler)
+                0x00000000000009fe                PROVIDE (wdt_handler = default_handler)
+                0x00000000000009fe                PROVIDE (rtc1_handler = default_handler)
+                0x00000000000009fe                PROVIDE (qdec_handler = default_handler)
+                0x00000000000009fe                PROVIDE (lpcomp_handler = default_handler)
+                0x00000000000009fe                PROVIDE (swi0_handler = default_handler)
+                0x00000000000009fe                PROVIDE (swi1_handler = default_handler)
+                0x00000000000009fe                PROVIDE (swi2_handler = default_handler)
+                0x00000000000009fe                PROVIDE (swi3_handler = default_handler)
+                0x00000000000009fe                PROVIDE (swi4_handler = default_handler)
+                0x00000000000009fe                PROVIDE (swi5_handler = default_handler)
 
-.glue_7         0x0000000000000da4        0x0
- .glue_7        0x0000000000000da4        0x0 linker stubs
+.glue_7         0x0000000000000ddc        0x0
+ .glue_7        0x0000000000000ddc        0x0 linker stubs
 
-.glue_7t        0x0000000000000da4        0x0
- .glue_7t       0x0000000000000da4        0x0 linker stubs
+.glue_7t        0x0000000000000ddc        0x0
+ .glue_7t       0x0000000000000ddc        0x0 linker stubs
 
-.vfp11_veneer   0x0000000000000da4        0x0
- .vfp11_veneer  0x0000000000000da4        0x0 linker stubs
+.vfp11_veneer   0x0000000000000ddc        0x0
+ .vfp11_veneer  0x0000000000000ddc        0x0 linker stubs
 
-.v4_bx          0x0000000000000da4        0x0
- .v4_bx         0x0000000000000da4        0x0 linker stubs
+.v4_bx          0x0000000000000ddc        0x0
+ .v4_bx         0x0000000000000ddc        0x0 linker stubs
 
-.iplt           0x0000000000000da4        0x0
- .iplt          0x0000000000000da4        0x0 whiteLightReceiver.o
+.iplt           0x0000000000000ddc        0x0
+ .iplt          0x0000000000000ddc        0x0 whiteLightReceiver.o
 
-.rel.dyn        0x0000000000000da4        0x0
- .rel.iplt      0x0000000000000da4        0x0 whiteLightReceiver.o
+.rel.dyn        0x0000000000000ddc        0x0
+ .rel.iplt      0x0000000000000ddc        0x0 whiteLightReceiver.o
 
-.data           0x0000000020000000        0x4 load address 0x0000000000000da4
+.data           0x0000000020000000        0x4 load address 0x0000000000000ddc
                 0x0000000020000000                __data_start = .
  *(.data*)
  .data          0x0000000020000000        0x4 whiteLightReceiver.o
@@ -147,51 +141,48 @@ LOAD /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a
                 0x0000000020000004                . = ALIGN (0x4)
                 0x0000000020000004                __data_end = .
 
-.igot.plt       0x0000000020000004        0x0 load address 0x0000000000000da8
+.igot.plt       0x0000000020000004        0x0 load address 0x0000000000000de0
  .igot.plt      0x0000000020000004        0x0 whiteLightReceiver.o
 
-.bss            0x0000000020000004     0x2f7c load address 0x0000000000000da8
+.bss            0x0000000020000004     0x20a4 load address 0x0000000000000de0
                 0x0000000020000004                __bss_start = .
  *(.bss*)
- .bss           0x0000000020000004       0x9c whiteLightReceiver.o
- .bss           0x00000000200000a0        0x0 lib.o
- .bss           0x00000000200000a0        0x0 startup.o
- .bss           0x00000000200000a0        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
- .bss           0x00000000200000a0        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
- .bss           0x00000000200000a0        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+ .bss           0x0000000020000004     0x20a4 whiteLightReceiver.o
+ .bss           0x00000000200020a8        0x0 lib.o
+ .bss           0x00000000200020a8        0x0 startup.o
+ .bss           0x00000000200020a8        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+ .bss           0x00000000200020a8        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
+ .bss           0x00000000200020a8        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  *(COMMON)
- COMMON         0x00000000200000a0     0x2ee0 whiteLightReceiver.o
-                0x00000000200000a0                bitstream
-                0x0000000020001810                samples
-                0x0000000020002f80                . = ALIGN (0x4)
-                0x0000000020002f80                __bss_end = .
-                0x0000000020002f80                __end = .
+                0x00000000200020a8                . = ALIGN (0x4)
+                0x00000000200020a8                __bss_end = .
+                0x00000000200020a8                __end = .
                 0x0000000020004000                __stack = (ORIGIN (RAM) + LENGTH (RAM))
                 0x0000000020003800                __stack_limit = (__stack - 0x800)
                 0x0000000000000001                ASSERT ((__stack_limit >= __end), region RAM overlaps with stack)
 OUTPUT(whiteLightReceiver.elf elf32-littlearm)
 LOAD linker stubs
 
-.debug_info     0x0000000000000000     0x1177
- .debug_info    0x0000000000000000      0x5ba whiteLightReceiver.o
- .debug_info    0x00000000000005ba      0x78b lib.o
- .debug_info    0x0000000000000d45      0x3c0 startup.o
- .debug_info    0x0000000000001105       0x26 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
- .debug_info    0x000000000000112b       0x26 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
- .debug_info    0x0000000000001151       0x26 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+.debug_info     0x0000000000000000     0x1129
+ .debug_info    0x0000000000000000      0x56c whiteLightReceiver.o
+ .debug_info    0x000000000000056c      0x78b lib.o
+ .debug_info    0x0000000000000cf7      0x3c0 startup.o
+ .debug_info    0x00000000000010b7       0x26 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+ .debug_info    0x00000000000010dd       0x26 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
+ .debug_info    0x0000000000001103       0x26 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
 
-.debug_abbrev   0x0000000000000000      0x657
- .debug_abbrev  0x0000000000000000      0x1c0 whiteLightReceiver.o
- .debug_abbrev  0x00000000000001c0      0x2e1 lib.o
- .debug_abbrev  0x00000000000004a1      0x17a startup.o
- .debug_abbrev  0x000000000000061b       0x14 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
- .debug_abbrev  0x000000000000062f       0x14 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
- .debug_abbrev  0x0000000000000643       0x14 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+.debug_abbrev   0x0000000000000000      0x658
+ .debug_abbrev  0x0000000000000000      0x1c1 whiteLightReceiver.o
+ .debug_abbrev  0x00000000000001c1      0x2e1 lib.o
+ .debug_abbrev  0x00000000000004a2      0x17a startup.o
+ .debug_abbrev  0x000000000000061c       0x14 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+ .debug_abbrev  0x0000000000000630       0x14 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
+ .debug_abbrev  0x0000000000000644       0x14 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
 
-.debug_loc      0x0000000000000000     0x1103
- .debug_loc     0x0000000000000000      0x437 whiteLightReceiver.o
- .debug_loc     0x0000000000000437      0x75a lib.o
- .debug_loc     0x0000000000000b91      0x572 startup.o
+.debug_loc      0x0000000000000000      0xff6
+ .debug_loc     0x0000000000000000      0x32a whiteLightReceiver.o
+ .debug_loc     0x000000000000032a      0x75a lib.o
+ .debug_loc     0x0000000000000a84      0x572 startup.o
 
 .debug_aranges  0x0000000000000000       0xc0
  .debug_aranges
@@ -207,28 +198,28 @@ LOAD linker stubs
  .debug_aranges
                 0x00000000000000a0       0x20 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
 
-.debug_ranges   0x0000000000000000       0xa8
- .debug_ranges  0x0000000000000000       0x70 whiteLightReceiver.o
- .debug_ranges  0x0000000000000070       0x38 lib.o
+.debug_ranges   0x0000000000000000      0x100
+ .debug_ranges  0x0000000000000000       0xc8 whiteLightReceiver.o
+ .debug_ranges  0x00000000000000c8       0x38 lib.o
 
-.debug_line     0x0000000000000000      0xc82
- .debug_line    0x0000000000000000      0x555 whiteLightReceiver.o
- .debug_line    0x0000000000000555      0x37e lib.o
- .debug_line    0x00000000000008d3      0x270 startup.o
- .debug_line    0x0000000000000b43       0x6c /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
- .debug_line    0x0000000000000baf       0x73 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
- .debug_line    0x0000000000000c22       0x60 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+.debug_line     0x0000000000000000      0xd7a
+ .debug_line    0x0000000000000000      0x64d whiteLightReceiver.o
+ .debug_line    0x000000000000064d      0x37e lib.o
+ .debug_line    0x00000000000009cb      0x270 startup.o
+ .debug_line    0x0000000000000c3b       0x6c /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+ .debug_line    0x0000000000000ca7       0x73 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
+ .debug_line    0x0000000000000d1a       0x60 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
 
-.debug_str      0x0000000000000000      0x42a
- .debug_str     0x0000000000000000      0x232 whiteLightReceiver.o
-                                        0x243 (size before relaxing)
- .debug_str     0x0000000000000232       0x8d lib.o
+.debug_str      0x0000000000000000      0x43d
+ .debug_str     0x0000000000000000      0x245 whiteLightReceiver.o
+                                        0x256 (size before relaxing)
+ .debug_str     0x0000000000000245       0x8d lib.o
                                         0x199 (size before relaxing)
- .debug_str     0x00000000000002bf       0xc8 startup.o
+ .debug_str     0x00000000000002d2       0xc8 startup.o
                                         0x1b8 (size before relaxing)
- .debug_str     0x0000000000000387       0xa3 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
- .debug_str     0x000000000000042a       0xa3 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
- .debug_str     0x000000000000042a       0xa3 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+ .debug_str     0x000000000000039a       0xa3 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+ .debug_str     0x000000000000043d       0xa3 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_divsi3.o)
+ .debug_str     0x000000000000043d       0xa3 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
 
 .comment        0x0000000000000000       0x59
  .comment       0x0000000000000000       0x59 whiteLightReceiver.o
