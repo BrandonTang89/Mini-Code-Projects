@@ -104,8 +104,8 @@ void stop_timer(void)
 
 /** Timer 1*/
 #define TICK 5  // One timer interrupt per 5 millisec (0.005 sec)
-#define BAUD 12 // 10 bits per second
-#define SAMPLES_PER_BIT 7 // 100 samples per bit
+#define BAUD 10 // 10 bits per second
+#define SAMPLES_PER_BIT 9 // 100 samples per bit
 #define SAMPLEBUFSIZE 1024
 static volatile unsigned timeStepsPerOutput = (1000) / (BAUD * TICK * SAMPLES_PER_BIT);
 static volatile unsigned timeCounter = 0;

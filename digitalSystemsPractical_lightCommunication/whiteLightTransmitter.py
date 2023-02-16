@@ -12,8 +12,8 @@ background.fill(pygame.Color('#000000'))
 backgroundWhite = pygame.Surface((800, 600))
 backgroundWhite.fill(pygame.Color('#FFFFFF'))
 
-baud = 12 # 10 bits per second
-message = "brandon"
+baud = 10 # 10 bits per second
+message = "beverly"
 bits_to_send = [[int(x) for x in bin(int.from_bytes(c.encode(), 'big'))[2:]] for c in message]
 bits_to_send = [[0] + bits_for_char + [1, 1, 1] for bits_for_char in bits_to_send] # add 1 start bit and 3 stop bits
 bits_to_send = [bit for bits_for_char in bits_to_send for bit in bits_for_char]
