@@ -26,109 +26,109 @@ LOAD lib.o
 LOAD startup.o
 LOAD /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a
 
-.text           0x0000000000000000      0xab0
+.text           0x0000000000000000      0xae8
  *(.vectors)
  .vectors       0x0000000000000000       0xc0 startup.o
                 0x0000000000000000                __vectors
  *(.text*)
- .text          0x00000000000000c0      0x420 redLightTransmitter.o
+ .text          0x00000000000000c0      0x458 redLightTransmitter.o
                 0x00000000000000c0                buf_put
                 0x00000000000000e0                buf_get
                 0x0000000000000104                serial_init
                 0x000000000000017c                uart_handler
-                0x00000000000001b4                serial_putc
-                0x00000000000001f0                print_buf
-                0x0000000000000218                serial_getc
-                0x0000000000000244                serial_getline
-                0x00000000000002b8                advance
-                0x000000000000032c                timer1_handler
-                0x0000000000000348                init_timer
-                0x00000000000003b0                init
- .text          0x00000000000004e0      0x274 lib.o
-                0x0000000000000632                f_storec
-                0x000000000000065e                atoi
-                0x00000000000006a0                xtou
-                0x00000000000006da                do_print
-                0x00000000000006f0                sprintf
-                0x0000000000000724                printf
- .text          0x0000000000000754      0x17c startup.o
-                0x0000000000000754                default_start
-                0x0000000000000754                __start
-                0x000000000000075e                memcpy
-                0x0000000000000772                memmove
-                0x000000000000079a                memset
-                0x00000000000007ac                __reset
-                0x0000000000000800                memcmp
-                0x0000000000000826                irq_priority
-                0x0000000000000884                delay_loop
-                0x0000000000000896                default_handler
-                0x0000000000000896                spin
- .text          0x00000000000008d0      0x114 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
-                0x00000000000008d0                __udivsi3
-                0x00000000000008d0                __aeabi_uidiv
-                0x00000000000009dc                __aeabi_uidivmod
- .text          0x00000000000009e4        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
-                0x00000000000009e4                __aeabi_ldiv0
-                0x00000000000009e4                __aeabi_idiv0
+                0x00000000000001e8                serial_putc
+                0x0000000000000224                print_buf
+                0x000000000000024c                serial_getc
+                0x0000000000000284                serial_getline
+                0x00000000000002f8                advance
+                0x000000000000036c                timer1_handler
+                0x0000000000000388                init_timer
+                0x00000000000003e8                init
+ .text          0x0000000000000518      0x274 lib.o
+                0x000000000000066a                f_storec
+                0x0000000000000696                atoi
+                0x00000000000006d8                xtou
+                0x0000000000000712                do_print
+                0x0000000000000728                sprintf
+                0x000000000000075c                printf
+ .text          0x000000000000078c      0x17c startup.o
+                0x000000000000078c                default_start
+                0x000000000000078c                __start
+                0x0000000000000796                memcpy
+                0x00000000000007aa                memmove
+                0x00000000000007d2                memset
+                0x00000000000007e4                __reset
+                0x0000000000000838                memcmp
+                0x000000000000085e                irq_priority
+                0x00000000000008bc                delay_loop
+                0x00000000000008ce                default_handler
+                0x00000000000008ce                spin
+ .text          0x0000000000000908      0x114 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+                0x0000000000000908                __udivsi3
+                0x0000000000000908                __aeabi_uidiv
+                0x0000000000000a14                __aeabi_uidivmod
+ .text          0x0000000000000a1c        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+                0x0000000000000a1c                __aeabi_ldiv0
+                0x0000000000000a1c                __aeabi_idiv0
  *(.rodata*)
  .rodata.str1.4
-                0x00000000000009e8       0x5c redLightTransmitter.o
+                0x0000000000000a20       0x5c redLightTransmitter.o
  .rodata.str1.4
-                0x0000000000000a44       0x11 lib.o
- *fill*         0x0000000000000a55        0x3 
- .rodata        0x0000000000000a58       0x58 lib.o
-                0x0000000000000ab0                . = ALIGN (0x4)
-                0x0000000000000ab0                __etext = .
-                0x0000000000000896                PROVIDE (nmi_handler = default_handler)
-                0x0000000000000896                PROVIDE (hardfault_handler = default_handler)
-                0x0000000000000896                PROVIDE (svc_handler = default_handler)
-                0x0000000000000896                PROVIDE (pendsv_handler = default_handler)
-                0x0000000000000896                PROVIDE (systick_handler = default_handler)
+                0x0000000000000a7c       0x11 lib.o
+ *fill*         0x0000000000000a8d        0x3 
+ .rodata        0x0000000000000a90       0x58 lib.o
+                0x0000000000000ae8                . = ALIGN (0x4)
+                0x0000000000000ae8                __etext = .
+                0x00000000000008ce                PROVIDE (nmi_handler = default_handler)
+                0x00000000000008ce                PROVIDE (hardfault_handler = default_handler)
+                0x00000000000008ce                PROVIDE (svc_handler = default_handler)
+                0x00000000000008ce                PROVIDE (pendsv_handler = default_handler)
+                0x00000000000008ce                PROVIDE (systick_handler = default_handler)
                 [!provide]                        PROVIDE (uart_handler = default_handler)
-                0x0000000000000896                PROVIDE (timer0_handler = default_handler)
+                0x00000000000008ce                PROVIDE (timer0_handler = default_handler)
                 [!provide]                        PROVIDE (timer1_handler = default_handler)
-                0x0000000000000896                PROVIDE (timer2_handler = default_handler)
-                0x0000000000000896                PROVIDE (power_clock_handler = default_handler)
-                0x0000000000000896                PROVIDE (radio_handler = default_handler)
-                0x0000000000000896                PROVIDE (i2c_handler = default_handler)
-                0x0000000000000896                PROVIDE (spi_handler = default_handler)
-                0x0000000000000896                PROVIDE (gpiote_handler = default_handler)
-                0x0000000000000896                PROVIDE (adc_handler = default_handler)
-                0x0000000000000896                PROVIDE (rtc0_handler = default_handler)
-                0x0000000000000896                PROVIDE (temp_handler = default_handler)
-                0x0000000000000896                PROVIDE (rng_handler = default_handler)
-                0x0000000000000896                PROVIDE (ecb_handler = default_handler)
-                0x0000000000000896                PROVIDE (ccm_aar_handler = default_handler)
-                0x0000000000000896                PROVIDE (wdt_handler = default_handler)
-                0x0000000000000896                PROVIDE (rtc1_handler = default_handler)
-                0x0000000000000896                PROVIDE (qdec_handler = default_handler)
-                0x0000000000000896                PROVIDE (lpcomp_handler = default_handler)
-                0x0000000000000896                PROVIDE (swi0_handler = default_handler)
-                0x0000000000000896                PROVIDE (swi1_handler = default_handler)
-                0x0000000000000896                PROVIDE (swi2_handler = default_handler)
-                0x0000000000000896                PROVIDE (swi3_handler = default_handler)
-                0x0000000000000896                PROVIDE (swi4_handler = default_handler)
-                0x0000000000000896                PROVIDE (swi5_handler = default_handler)
+                0x00000000000008ce                PROVIDE (timer2_handler = default_handler)
+                0x00000000000008ce                PROVIDE (power_clock_handler = default_handler)
+                0x00000000000008ce                PROVIDE (radio_handler = default_handler)
+                0x00000000000008ce                PROVIDE (i2c_handler = default_handler)
+                0x00000000000008ce                PROVIDE (spi_handler = default_handler)
+                0x00000000000008ce                PROVIDE (gpiote_handler = default_handler)
+                0x00000000000008ce                PROVIDE (adc_handler = default_handler)
+                0x00000000000008ce                PROVIDE (rtc0_handler = default_handler)
+                0x00000000000008ce                PROVIDE (temp_handler = default_handler)
+                0x00000000000008ce                PROVIDE (rng_handler = default_handler)
+                0x00000000000008ce                PROVIDE (ecb_handler = default_handler)
+                0x00000000000008ce                PROVIDE (ccm_aar_handler = default_handler)
+                0x00000000000008ce                PROVIDE (wdt_handler = default_handler)
+                0x00000000000008ce                PROVIDE (rtc1_handler = default_handler)
+                0x00000000000008ce                PROVIDE (qdec_handler = default_handler)
+                0x00000000000008ce                PROVIDE (lpcomp_handler = default_handler)
+                0x00000000000008ce                PROVIDE (swi0_handler = default_handler)
+                0x00000000000008ce                PROVIDE (swi1_handler = default_handler)
+                0x00000000000008ce                PROVIDE (swi2_handler = default_handler)
+                0x00000000000008ce                PROVIDE (swi3_handler = default_handler)
+                0x00000000000008ce                PROVIDE (swi4_handler = default_handler)
+                0x00000000000008ce                PROVIDE (swi5_handler = default_handler)
 
-.glue_7         0x0000000000000ab0        0x0
- .glue_7        0x0000000000000ab0        0x0 linker stubs
+.glue_7         0x0000000000000ae8        0x0
+ .glue_7        0x0000000000000ae8        0x0 linker stubs
 
-.glue_7t        0x0000000000000ab0        0x0
- .glue_7t       0x0000000000000ab0        0x0 linker stubs
+.glue_7t        0x0000000000000ae8        0x0
+ .glue_7t       0x0000000000000ae8        0x0 linker stubs
 
-.vfp11_veneer   0x0000000000000ab0        0x0
- .vfp11_veneer  0x0000000000000ab0        0x0 linker stubs
+.vfp11_veneer   0x0000000000000ae8        0x0
+ .vfp11_veneer  0x0000000000000ae8        0x0 linker stubs
 
-.v4_bx          0x0000000000000ab0        0x0
- .v4_bx         0x0000000000000ab0        0x0 linker stubs
+.v4_bx          0x0000000000000ae8        0x0
+ .v4_bx         0x0000000000000ae8        0x0 linker stubs
 
-.iplt           0x0000000000000ab0        0x0
- .iplt          0x0000000000000ab0        0x0 redLightTransmitter.o
+.iplt           0x0000000000000ae8        0x0
+ .iplt          0x0000000000000ae8        0x0 redLightTransmitter.o
 
-.rel.dyn        0x0000000000000ab0        0x0
- .rel.iplt      0x0000000000000ab0        0x0 redLightTransmitter.o
+.rel.dyn        0x0000000000000ae8        0x0
+ .rel.iplt      0x0000000000000ae8        0x0 redLightTransmitter.o
 
-.data           0x0000000020000000        0x4 load address 0x0000000000000ab0
+.data           0x0000000020000000        0x4 load address 0x0000000000000ae8
                 0x0000000020000000                __data_start = .
  *(.data*)
  .data          0x0000000020000000        0x4 redLightTransmitter.o
@@ -140,40 +140,40 @@ LOAD /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a
                 0x0000000020000004                . = ALIGN (0x4)
                 0x0000000020000004                __data_end = .
 
-.igot.plt       0x0000000020000004        0x0 load address 0x0000000000000ab4
+.igot.plt       0x0000000020000004        0x0 load address 0x0000000000000aec
  .igot.plt      0x0000000020000004        0x0 redLightTransmitter.o
 
-.bss            0x0000000020000004     0x1874 load address 0x0000000000000ab4
+.bss            0x0000000020000004     0x1900 load address 0x0000000000000aec
                 0x0000000020000004                __bss_start = .
  *(.bss*)
- .bss           0x0000000020000004       0x9c redLightTransmitter.o
-                0x0000000020000014                clock_counter
-                0x0000000020000018                cur_bit
-                0x000000002000001c                done
- .bss           0x00000000200000a0        0x0 lib.o
- .bss           0x00000000200000a0        0x0 startup.o
- .bss           0x00000000200000a0        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
- .bss           0x00000000200000a0        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+ .bss           0x0000000020000004      0x128 redLightTransmitter.o
+                0x0000000020000020                clock_counter
+                0x0000000020000024                cur_bit
+                0x0000000020000028                done
+ .bss           0x000000002000012c        0x0 lib.o
+ .bss           0x000000002000012c        0x0 startup.o
+ .bss           0x000000002000012c        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+ .bss           0x000000002000012c        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  *(COMMON)
- COMMON         0x00000000200000a0     0x17d8 redLightTransmitter.o
-                0x00000000200000a0                message
-                0x0000000020000104                num_bits_to_send
-                0x0000000020000108                bits_to_send
-                0x0000000020001878                . = ALIGN (0x4)
-                0x0000000020001878                __bss_end = .
-                0x0000000020001878                __end = .
+ COMMON         0x000000002000012c     0x17d8 redLightTransmitter.o
+                0x000000002000012c                message
+                0x0000000020000190                num_bits_to_send
+                0x0000000020000194                bits_to_send
+                0x0000000020001904                . = ALIGN (0x4)
+                0x0000000020001904                __bss_end = .
+                0x0000000020001904                __end = .
                 0x0000000020004000                __stack = (ORIGIN (RAM) + LENGTH (RAM))
                 0x0000000020003800                __stack_limit = (__stack - 0x800)
                 0x0000000000000001                ASSERT ((__stack_limit >= __end), region RAM overlaps with stack)
 OUTPUT(redLightTransmitter.elf elf32-littlearm)
 LOAD linker stubs
 
-.debug_info     0x0000000000000000     0x10ff
- .debug_info    0x0000000000000000      0x568 redLightTransmitter.o
- .debug_info    0x0000000000000568      0x78b lib.o
- .debug_info    0x0000000000000cf3      0x3c0 startup.o
- .debug_info    0x00000000000010b3       0x26 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
- .debug_info    0x00000000000010d9       0x26 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+.debug_info     0x0000000000000000     0x1147
+ .debug_info    0x0000000000000000      0x5b0 redLightTransmitter.o
+ .debug_info    0x00000000000005b0      0x78b lib.o
+ .debug_info    0x0000000000000d3b      0x3c0 startup.o
+ .debug_info    0x00000000000010fb       0x26 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+ .debug_info    0x0000000000001121       0x26 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
 
 .debug_abbrev   0x0000000000000000      0x61d
  .debug_abbrev  0x0000000000000000      0x19a redLightTransmitter.o
@@ -203,22 +203,22 @@ LOAD linker stubs
  .debug_ranges  0x0000000000000000       0x80 redLightTransmitter.o
  .debug_ranges  0x0000000000000080       0x38 lib.o
 
-.debug_line     0x0000000000000000      0xbc4
- .debug_line    0x0000000000000000      0x50a redLightTransmitter.o
- .debug_line    0x000000000000050a      0x37e lib.o
- .debug_line    0x0000000000000888      0x270 startup.o
- .debug_line    0x0000000000000af8       0x6c /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
- .debug_line    0x0000000000000b64       0x60 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+.debug_line     0x0000000000000000      0xc0f
+ .debug_line    0x0000000000000000      0x555 redLightTransmitter.o
+ .debug_line    0x0000000000000555      0x37e lib.o
+ .debug_line    0x00000000000008d3      0x270 startup.o
+ .debug_line    0x0000000000000b43       0x6c /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+ .debug_line    0x0000000000000baf       0x60 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
 
-.debug_str      0x0000000000000000      0x3dd
- .debug_str     0x0000000000000000      0x1ea redLightTransmitter.o
-                                        0x208 (size before relaxing)
- .debug_str     0x00000000000001ea       0x88 lib.o
+.debug_str      0x0000000000000000      0x3e9
+ .debug_str     0x0000000000000000      0x1f6 redLightTransmitter.o
+                                        0x228 (size before relaxing)
+ .debug_str     0x00000000000001f6       0x88 lib.o
                                         0x199 (size before relaxing)
- .debug_str     0x0000000000000272       0xc8 startup.o
+ .debug_str     0x000000000000027e       0xc8 startup.o
                                         0x1b8 (size before relaxing)
- .debug_str     0x000000000000033a       0xa3 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
- .debug_str     0x00000000000003dd       0xa3 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+ .debug_str     0x0000000000000346       0xa3 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_udivsi3.o)
+ .debug_str     0x00000000000003e9       0xa3 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
 
 .comment        0x0000000000000000       0x59
  .comment       0x0000000000000000       0x59 redLightTransmitter.o
