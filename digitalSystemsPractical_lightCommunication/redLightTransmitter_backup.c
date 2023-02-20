@@ -157,7 +157,7 @@ volatile int cur_bit = 0;
 volatile int done = 0;
 volatile int clock_counter = 0;
 
-#define BAUD 12
+#define BAUD 10
 #define TICK 5                // One timer interrupt per 5 millisec
 int ticksPerBit = 1000 / (BAUD*TICK);
 void advance(void) {
@@ -208,8 +208,8 @@ void init(void)
         for (int i=0; message[i] != '\0'; i++) {
             int c = message[i];
             bits_to_send[50 + 11*i] = 0; // Start bit
-            for (int j=7; j>=0; j--) {
-                bits_to_send[50 + 11*i + 1 + j] = (c >> j) & 1;
+            for (int j=0; j<7; j++) {
+                bits_to_send[50 + 11*i + 1 + j] = (c >> (6-j)) & 1;
             }
             bits_to_send[50 + 11*i + 8] = 1; // Stop bit
             bits_to_send[50 + 11*i + 9] = 1; // Stop bit
